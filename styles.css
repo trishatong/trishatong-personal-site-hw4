@@ -224,9 +224,36 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    max-width: 100%;
-    padding: 0.5rem 1rem;
-    margin-right: 3rem;
+    right: 3vw;
+    gap: 0.5rem;
+    margin-left: auto;
+    position: absolute;
+    max-height: 4dvh;
+    overflow: hidden;
+}
+
+.search input[type="text"] {
+    padding: 5px;
+    border-radius: 4px;
+    width: 130px;
+    max-width: 130px;
+    padding: 1dvh 1dvh;
+    font-size: 1em;
+}
+
+.search button {
+    padding: 5px 10px;
+    background: var(--form-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search button:hover {
+    background: #588fad;
 }
 
 @keyframes spin {
@@ -314,6 +341,22 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .search {
+        order: 1;
+        margin-left: auto;
+        padding-right: 1dvw;
+        max-height: 3dvh;
+    }
+
+    .search input[type="text"] {
+        width: 80px;
+        max-width: 80px;
+    }
+
+    .search button {
+        width: auto;
+    }
+
     nav ul {
         display: none;
         flex-direction: column;
@@ -333,6 +376,7 @@ footer {
 
     .hamburger {
         display: block;
+        order: 0;
     }
 
     .nav-links {
