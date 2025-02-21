@@ -237,7 +237,7 @@ button:hover {
     border-radius: 4px;
     width: 130px;
     max-width: 130px;
-    padding: 1dvh 1dvh;
+    padding: 0.5dvh 1dvh;
     font-size: 1em;
 }
 
