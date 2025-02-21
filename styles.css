@@ -5,6 +5,8 @@
     --text-color: color(display-p3 0.1 0.1 0.1);
     --background-color: #f9f9f9;
     --mixed-color: color-mix(in srgb, gray, plum);
+    --form-color: #1a1a1a;
+    --form-color: #254074;
 }
 
 body {
@@ -45,6 +47,10 @@ body {
 
 h1, h2, h3 {
     font-family: 'Tajawal', Verdana, sans-serif;
+}
+
+h3#form-header {
+    text-align: center;
 }
 
 #home-title {
@@ -90,16 +96,10 @@ header {
     background-color: var(--primary-color, blue);
 }
 
-.search {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    max-width: 100%;
-    padding: 0.5rem 1rem;
-    margin-right: 3rem;
-}
-/* 
 nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--primary-color, blue);
     padding: 0;
     z-index: 1000;
@@ -119,18 +119,19 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
-    padding: 0.5rem 1rem; */
-    /*border-radius: 15px; added this in default state for smooth change */
-    /* transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 15px; /*added this in default state for smooth change */
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #f9f9f9;
     transform: scale(1.1);
     background-color: #ffffff33;
-} */
+}
 
-@scope (nav) {
+/* scope */
+/* @scope (nav) {
     background-color: var(--primary-color, blue);
     padding: 0;
     z-index: 1000;
@@ -150,7 +151,7 @@ nav ul li a:hover {
         color: white;
         font-size: 1.2rem;
         padding: 0.5rem 1rem;
-        border-radius: 15px; /* added this in default state for smooth change */
+        border-radius: 15px;
         transition: color 0.3s ease, background-color 0.3s ease;
     }
 
@@ -159,8 +160,74 @@ nav ul li a:hover {
         transform: scale(1.1);
         background-color: #ffffff33;
     }
+} */
+
+form {
+    display: grid;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--form-color);
+}
+
+label {
+    font-weight: bold;
+    display: block; /* moves next element to new line */
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* padding and border are included in the width calculation */
+    font-size: 1em;
+}
+
+button {
+    padding: 10px;
+    background: var(--form-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #588fad;
+}
+
+.error {
+    color: red;
+    font-size: 0.85em;
+    margin-top: 5px;
+}
+
+.info {
+    color: #4CAF50;
+    font-size: 0.85em;
+    margin-top: 5px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 100%;
+    padding: 0.5rem 1rem;
+    margin-right: 3rem;
+}
 
 @keyframes spin {
     from {
@@ -178,7 +245,8 @@ nav ul li a:hover {
     animation: spin 2s linear infinite;
 }
 
-.home-image {
+/* nested */
+/* .home-image {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -193,29 +261,28 @@ nav ul li a:hover {
         margin-right: auto;
         object-fit: cover;
         width: 50%;
-        border-radius: 8px; 
+        border-radius: 8px;
         transition: transform 0.3s ease-in-out;
 
         &:hover {
             transform: scale(1.05);
-
         }
     }
-}
+} */
 
-/* .home-image img {
+.home-image img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     object-fit: cover;
     width: 50%;
-    border-radius: 8px; 
+    border-radius: 8px;
     transition: transform 0.3s ease-in-out;
 }
 
 .home-image img:hover {
     transform: scale(1.05);
-} */
+}
 
 .balloon img {
     width: auto;
@@ -223,8 +290,8 @@ nav ul li a:hover {
     max-width: 60%;
     max-height: 60%;
     object-fit: cover;
-    object-position: center; 
-    border-radius: 8px; 
+    object-position: center;
+    border-radius: 8px;
     display: block;
 }
 
@@ -265,7 +332,7 @@ footer {
     }
 
     .hamburger {
-        display: block; 
+        display: block;
     }
 
     .nav-links {
