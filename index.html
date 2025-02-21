@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trisha Tong's Site</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- EC meta tags for linkedin -->
+    <meta property="og:title" content="Trisha Tong's Site">
+    <meta property="og:description" content="Explore more about me and my work as a software engineer.">
+    <meta property="og:url" content="https://trishatong.netlify.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Trisha Tong's Site">
+    <meta name="author" content="Trisha Tong">
+    <!-- no pinch/zoom -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- custom font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        <label for="menu-toggle" class="hamburger">☰</label>
+        <nav>
+            <ul class="nav-links">
+              <li><a href="index.html">home</a></li>
+              <li><a href="projects.html">projects</a></li>
+              <li><a href="experiments.html">experiments</a></li>
+              <li><a href="blog.html">blog</a></li>
+              <li><a href="about.html">about</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <form action="./search/">
+              <label for="topic">?</label>
+              <input type="search" id="topic" name="q">
+              <button type="submit">search</button>
+            </form>
+        </search>
+    </header>
+    <main>
+        <section>
+            <h1 id="home-title">welcome to my website!</h1>
+        </section>
+        <!-- <img id="home-image" src="media/images/sunset.jpg" alt="sunset" width="550" height="300"> -->
+
+        <picture class="home-image">
+            <source srcset="media/images/sunset-xl.jpg" media="(min-width: 1025px)">
+            <source srcset="media/images/sunset-lg.jpg" media="(min-width: 769px)">
+            <source srcset="media/images/sunset-med.jpg" media="(min-width: 481px)">
+            <img src="media/images/sunset-sm.jpg" alt="a beautiful sunset">
+        </picture>
+
+        <section>
+            <h2>currently, I'm...</h2>
+            <!-- <p><i>what am i working on?</i></p> -->
+            <article>
+                <h3>learning as a software engineering apprentice @ <b>Fiber Mountain</b></h3>
+                <details>
+                    <summary>learn more</summary>
+                    <ol>
+                        <li>acquiring hands-on experience with <code>Node.js</code></li>
+                        <li>developing proficiency in API integration and management</li>
+                        <li>gaining practical knowledge in network configurations, VirtualBox, and Ubuntu</li>
+                    </ol>
+                    <p><dfn>Fiber Mountain</dfn> aims to optimize data center management through secure and automated software solutions.</p>
+                </details>
+            </article>
+            <article>
+                <h3>working as a web developer @ <b>TEDxUCSD</b></h3>
+                <details>
+                    <summary>learn more</summary>
+                    <ol>
+                        <li>improving and maintaining <span>TEDxUCSD</span> website</li>
+                        <li>managing, editing, and curating media content</li>
+                    </ol>
+                    <iframe src="https://tedxucsd.com/" title="TEDxUCSD"></iframe>
+                    <blockquote cite="https://www.ted.com/about">
+                        <p>"Discover and spread ideas that spark conversation, deepen understanding, and drive
+                            meaningful change."</p>
+                        <cite>Mission Statement, TED</cite>
+                    </blockquote>
+                    <blockquote cite="https://www.ted.com/participate/organize-a-local-tedx-event/before-you-start/tedx-rules">
+                        <p>"In the spirit of ideas worth spreading, TED has created a program called TEDx. TEDx is a
+                            program of local, self-organized events that bring people together to share a TED-like experience."</p>
+                        <cite>What is TEDx?, TED</cite>
+                    </blockquote>
+                </details>
+            </article>
+        </section>        
+        <!-- <section>
+            <h2>briefly me:</h2>
+            <dl>
+                <dt>STUDENT</dt>
+                <dd>4th-year CS major @ UCSD</dd>
+                <dt>CAREER</dt>
+                <dd>aspiring <abbr title="software engineer">SWE</abbr></dd>
+                <dt>WORDS TO DESCRIBE ME</dt>
+                <dd>persevering, diligent, thoughtful</dd>
+            </dl>
+        </section>
+        <p>to reload the page, press <kbd>Ctrl</kbd> + <kbd>r</kbd></p> -->
+        <noscript>your browser either does not support JavaScript or JavaScript is disabled!</noscript>
+
+    </main>
+    <hr>
+    <div id="contact-form">
+        <!-- ADD ACTION PAGE? -->
+        <h3>questions? leave me your name! :D</h3>
+        <form action="thank-you.html" method="get">
+            <fieldset>
+                <legend>contact info:</legend>
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname"><br><br>
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="locations">where are you from?</label>
+                <select  name="locations" id="locations">
+                    <option value="" disabled selected>select a location</option>
+                    <optgroup label="Southern CA">
+                        <option value="san-diego">San Diego</option>
+                        <option value="orange-county">Orange County</option>
+                        <option value="los-angeles">Los Angeles</option>
+                        <option value="other-socal">Other (SoCal)</option>
+                    </optgroup>
+                    <optgroup label="Northern CA">
+                        <option value="san-francisco">San Francisco</option>
+                        <option value="san-jose">San Jose</option>
+                        <option value="palo-alto">Palo Alto</option>
+                        <option value="mountain-view">Mountain View</option>
+                        <option value="other-norcal">Other (NorCal)</option>
+                    </optgroup>
+                    <optgroup label="Other (U.S.)">
+                        <option value="west">West</option>
+                        <option value="west">MidWest</option>
+                        <option value="west">SouthWest</option>
+                        <option value="west">SouthEast</option>
+                        <option value="west">NorthEast</option>
+                    </optgroup>
+                </select><br><br>
+                <label for="user-type">Select which best applies to you:</label>
+                <select name="user-types" id="user-type">
+                    <option value="" disabled selected>who are you?</option>
+                    <option value="recruiter">recruiter</option>
+                    <option value="student">student</option>
+                    <option value="other">other</option>
+                </select><br><br>
+                <textarea id="user-question" name="user-question" rows="4" cols="50">leave your question here...</textarea><br>
+                <!-- <input type="submit" value="submit"> -->
+                <button type="submit">submit</button>
+            </fieldset>
+        </form>
+    </div>
+    <footer>
+        <div>
+            <address>
+                written by <a href="mailto:trishahtong@gmail.com">trisha tong</a><br>
+                UCSD: <a href="https://ucsd.edu/">ucsd.edu</a>, 9500 Gilman Dr, La Jolla, CA 92093<br>
+            </address>
+        </div>
+        <div id="social-media">
+            <a href="http://facebook.com">Facebook</a> |
+            <a href="https://www.linkedin.com/">LinkedIn</a> |
+            <a href="http://instagram.com">Instagram</a>
+        </div>
+        <div id="smiley-face">
+            <pre>
+                .-''''''''''-.
+              .'               '.
+             /                   \
+            |    O         O     |
+            |                     |
+             \       '---'       /
+              '.               .'
+                '-...........-'
+            </pre>
+         
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- sample contact form
+<form id="contactForm" action="/contact" method="POST" novalidate>
+    <fieldset>
+        <legend>Personal Information</legend>
+        <label for="name">Your Name: </label>
+        <input type="text" id="name" name="name" required autofocus autocomplete="name">
+
+        <label for="age">Age: </label>
+        <input type="number" id="age" name="age" min="1" max="120" placeholder="e.g., 30" required>
+
+        <label for="telephone">Telephone: </label>
+        <input type="tel" id="telephone" name="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="(123) 456-7890">
+
+        <label for="website">Website: </label>
+        <input type="url" id="website" name="website" placeholder="https://www.example.com">
+
+        <label for="comments">Comments: </label>
+        <textarea id="comments" name="comments" rows="5" cols="50" maxlength="500" placeholder="Enter your comments here..."></textarea>
+    </fieldset> 
+
+    <button type="submit">submit</button>
+</form> -->

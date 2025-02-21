@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects - Trisha Tong</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        highlight-box {
+            display: block;
+            border: 2px solid black;
+            background-color: #ffffcc;
+            width: 20%;
+        }
+    </style>
+    <!-- custom font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        <label for="menu-toggle" class="hamburger">☰</label>
+        <nav>
+            <ul class="nav-links">
+              <li><a href="index.html">home</a></li>
+              <li><a href="projects.html">projects</a></li>
+              <li><a href="experiments.html">experiments</a></li>
+              <li><a href="blog.html">blog</a></li>
+              <li><a href="about.html">about</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <form action="./search/">
+              <label for="topic">?</label>
+              <input type="search" id="topic" name="q">
+              <button type="submit">search</button>
+            </form>
+        </search>
+    </header>
+    <main>
+        <p>want to listen to rain sounds while you read?</p>
+        <audio controls>
+            <source src="media/audio/rain.mpg" type="audio/mpeg">
+            <source src="media/audio/rain.mp4" type="audio/mp4">
+            Your browser does not support the audio element.
+        </audio><br>
+
+        <section>
+            <highlight-box>this is highlighted. I can use this custom element to emphasize important things.</highlight-box><br>
+            <hello-world></hello-world>
+            <script>
+                class HelloWorld extends HTMLElement {
+                    constructor() {
+                        super();
+                        console.log("Hello, world!");
+                    }
+                }
+                customElements.define("hello-world", HelloWorld);
+            </script>
+        </section>
+        
+        <template id="background-color">
+            <p>snoopy says hi</p>
+            <img src="media/snoopy.jpg" alt="snoopy">
+        </template>
+
+        <section>
+            <h3>random boxes: </h3>
+            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+            <script>
+                var canvas = document.getElementById('myCanvas');
+                var ctx = canvas.getContext('2d');
+                ctx.fillStyle = "#c8a2c8";
+                ctx.fillRect(20, 20, 150, 50);
+            </script>
+        </section>
+        <dialog open>another random box</dialog>
+        <span>
+            <svg width="200" height="100">
+                <rect width="150" height="100" fill="lavender" />
+            </svg>
+        </span><br>
+        <video width="216" height="384" controls> <!-- original: 720x1280 -->
+            <source src="media/video/mt-tam.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <h2>extra credit</h2>
+        <section>
+            <h3>Einstein's favorite formula</h3>
+            <math>
+                <msup>
+                    <mi>E</mi>
+                </msup>
+                <mo>=</mo>
+                <mi>m</mi>
+                <mo>&#x2062;</mo>
+                <msup>
+                    <mi>c</mi>
+                    <mn>2</mn>
+                </msup>
+            </math>
+        </section>
+        <section>
+            <p>As seen on the caniuse.com page, MathML was not supported by major browsers.
+                Therefore, developers chose to stay away from using it. Recently, it has become
+                supported by more major browsers, leading to MathML's growth in popularity.
+            </p>
+        </section>
+        
+    </main>
+    <footer>
+        <p>© 2025 Trisha Tong</p>
+    </footer>
+</body>
+</html>
