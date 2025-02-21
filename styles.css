@@ -224,7 +224,7 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    right: 3vw;
+    right: 2vw;
     gap: 0.5rem;
     margin-left: auto;
     position: absolute;
