@@ -193,6 +193,37 @@ textarea {
     font-size: 1em;
 }
 
+input:required,
+textarea:required {
+    border: 1px solid var(--primary-color);
+}
+
+input:user-invalid,
+textarea:user-invalid {
+    border-color: red;
+    box-shadow: 0 0 4px red;
+}
+
+input:required:placeholder-shown,
+textarea:required:placeholder-shown {
+    border-color: orange;
+    background-color: #fff9e6;
+}
+
+input:optional:placeholder-shown,
+textarea:optional:placeholder-shown {
+    border-color: var(--form-color);
+    opacity: 0.4;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--form-color);
+    box-shadow: 0 0 4px var(--form-color);
+    transition: box-shadow 0.3s ease;
+}
+
 button {
     padding: 10px;
     background: var(--form-color);
