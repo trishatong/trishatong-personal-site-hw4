@@ -251,6 +251,14 @@ button:hover {
     margin-top: 5px;
 }
 
+#comments-count.info.warning {
+    color: orange;
+}
+
+#comments-count.info.error {
+    color: red;
+}
+
 .search {
     display: flex;
     align-items: center;

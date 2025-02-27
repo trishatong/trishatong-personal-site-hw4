@@ -111,18 +111,18 @@
        
                 <label for="name">Name: </label>
                 <input type="text" id="name" name="name" required autocomplete="name">
-                <output class="error" for="name"></output>
-                <output class="info" for="name"></output>
+                <output class="info" id="name"></output>
+                <output class="error" id="name-error"></output>
                 <br><br>
        
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-                <output class="error" for="email"></output>
-                <output class="info" for="email"></output>
+                <output class="info" id="email"></output>
+                <output class="error" id="email-error"></output>
                 <br><br>
        
-                <label for="locations">where are you from? (optional)</label>
-                <select name="locations" id="locations">
+                <label for="location">where are you from? (optional)</label>
+                <select name="locations" id="location">
                     <option value="" disabled selected>select a location</option>
                     <optgroup label="Southern CA">
                         <option value="san-diego">San Diego</option>
@@ -145,8 +145,8 @@
                         <option value="northeast">NorthEast</option>
                     </optgroup>
                 </select>
-                <output class="error" for="locations"></output>
-                <output class="info" for="locations"></output>
+                <output class="info" id="location"></output>
+                <output class="error" id="location-error"></output>
                 <br><br>
        
                 <label for="user-type">select which best applies to you: (optional)</label>
@@ -156,14 +156,14 @@
                     <option value="student">student</option>
                     <option value="other">other</option>
                 </select>
-                <output class="error" for="user-type"></output>
-                <output class="info" for="user-type"></output>
+                <output class="info" id="user-type"></output>
+                <output class="error" id="user-type-error"></output>
                 <br><br>
        
                 <label for="comments">comments: </label>
                 <textarea id="comments" name="comments" rows="5" cols="50" maxlength="500" placeholder="Enter your comments here..."></textarea>
-                <output class="error" for="comments"></output>
-                <output class="info" for="comments"></output>
+                <output class="info" id="comments-count">500 characters remaining</output>
+                <output class="error" id="comments-error"></output>
                 <br><br>
        
                 <input type="hidden" name="possible_bot" value="true">
@@ -172,6 +172,7 @@
             </fieldset>
         </form>
     </div><br>
+    <script src="formValidation.js"></script>
     <footer>
         <div>
             <address>
