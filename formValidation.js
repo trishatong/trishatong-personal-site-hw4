@@ -91,6 +91,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // final validation on submit
     form.addEventListener('submit', function (event) {
+        validateField(nameInput);
+        validateField(emailInput);
+        validateField(commentsInput);
         if (!form.checkValidity()) {
             event.preventDefault();
         }
