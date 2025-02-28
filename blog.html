@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Projects - Trisha Tong</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="theme-toggle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- custom font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +22,17 @@
               <li><a href="experiments.html">experiments</a></li>
               <li><a href="blog.html">blog</a></li>
               <li><a href="about.html">about</a></li>
+              <li>
+                <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" class="theme-toggle">
+                    🌞
+                </button>
+              </li>
             </ul>
-        </nav>
-        <div class="search">
-            <form action="./search/">
-              <label for="topic">?</label>
-              <input type="search" id="topic" name="q">
-              <button type="submit">search</button>
+            <form class="search" action="./search/">
+                <input type="text" name="q" placeholder="search...">
+                <button type="submit">search</button>
             </form>
-        </search>
+        </nav>
     </header>
     <main>
         <h2>coming soon...</h2>
@@ -42,7 +45,9 @@
             </picture>  
             <figcaption>hot air balloon!</figcaption>
         </figure>
+        <noscript>your browser either does not support JavaScript or JavaScript is disabled!</noscript>
     </main>
+    <script src="themeToggle.js"></script>
     <footer>
         <p>© 2025 Trisha Tong</p>
     </footer>

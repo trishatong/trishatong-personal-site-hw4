@@ -7,6 +7,26 @@
     --mixed-color: color-mix(in srgb, gray, plum);
     --form-color: #1a1a1a;
     --form-color: #254074;
+    --hover: color-mix(in srgb, var(--primary-color) 50%, white 50%);
+    --col-1-bg: #e3e1e3;
+    --col-2-bg: #e3e1e3;
+    --col-3-bg: #e8dce8;
+    --textarea-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+    --primary-color: #2c3e50;      /* Darker blue-gray for headers and nav */
+    --secondary-color: #34495e;    /* Slightly lighter shade for accents */
+    --text-color: #ecf0f1;         /* Light text color for readability */
+    --background-color: #1c1c1c;   /* Very dark background */
+    --mixed-color: color-mix(in srgb, black, plum);
+    --form-color: #4a4a4a;         /* Darker form background */
+    --form-color: #85a0c1;      
+    --hover: color-mix(in srgb, var(--primary-color) 50%, black 50%);
+    --col-1-bg: #3a3a3a;
+    --col-2-bg: #3a3a3a;
+    --col-3-bg: #634463;
+    --textarea-bg: #ffffff;
 }
 
 body {
@@ -103,8 +123,17 @@ nav {
     background-color: var(--primary-color, blue);
     padding: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease; /* allows smooth change for theme toggle */
 }
 
+.theme-toggle {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    top: 50%;
+}
 nav ul {
     display: flex;
     gap: 1rem;
@@ -120,7 +149,7 @@ nav ul li a {
     color: white;
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
-    border-radius: 15px; /*added this in default state for smooth change */
+    border-radius: 15px; /* added this in default state for smooth change */
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
@@ -213,7 +242,7 @@ textarea:required:placeholder-shown {
 input:optional:placeholder-shown,
 textarea:optional:placeholder-shown {
     border-color: var(--form-color);
-    opacity: 0.4;
+    background-color: var(--textarea-bg);
 }
 
 input:focus,
@@ -223,6 +252,11 @@ textarea:focus {
     box-shadow: 0 0 4px var(--form-color);
     transition: box-shadow 0.3s ease;
 }
+
+/* textarea#comments,
+textarea#comments:placeholder-shown {
+    background-color: var(--textarea-bg);
+} */
 
 button {
     padding: 10px;
@@ -280,7 +314,7 @@ button:hover {
     font-size: 1em;
 }
 
-.search button {
+.search button[type="submit"] {
     padding: 5px 10px;
     background: var(--form-color);
     color: white;
@@ -367,9 +401,21 @@ table {
     margin-top: 1rem;
 }
 
+.col-1 {
+    background-color: var(--col-1-bg);
+}
+
+.col-2 {
+    background-color: var(--col-2-bg);
+}
+
+.col-3 {
+    background-color: var(--col-3-bg);
+}
+
 /* exclude <th> */
 table tr:not(:has(th)):hover {
-    background-color: color-mix(in srgb, var(--primary-color) 50%, white 50%);
+    background-color: var(--hover);
     transition: background-color 0.3s ease;
 }
 
@@ -426,7 +472,7 @@ footer {
         top: 60px;
         left: 0;
         width: 80dvw;
-        height: 30dvh;
+        height: 38dvh;
         padding: 1rem;
         z-index: 9999;
     }

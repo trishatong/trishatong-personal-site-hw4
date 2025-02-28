@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Trisha Tong's Site</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="theme-toggle.css">
     <!-- EC meta tags for linkedin -->
     <meta property="og:title" content="Trisha Tong's Site">
     <meta property="og:description" content="Explore more about me and my work as a software engineer.">
@@ -29,6 +30,11 @@
               <li><a href="experiments.html">experiments</a></li>
               <li><a href="blog.html">blog</a></li>
               <li><a href="about.html">about</a></li>
+              <li>
+                <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" class="theme-toggle">
+                    🌞
+                </button>
+              </li>
             </ul>
             <form class="search" action="./search/">
                 <input type="text" name="q" placeholder="search...">
@@ -107,6 +113,8 @@
                 </fieldset>
             </form>
         </div><br>
+        <noscript>your browser either does not support JavaScript or JavaScript is disabled!</noscript>
     </main>
+    <script src="themeToggle.js"></script>
 </body>
 </html>
