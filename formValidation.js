@@ -4,9 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const emailInput = document.getElementById('email');
     const commentsInput = document.getElementById('comments');
     const commentsCount = document.getElementById('comments-count');
+    const formErrorsInput = document.getElementById('form-errors');
+
+    const form_errors = [];
 
     const patterns = {
-        name: /^[A-Za-z\s]*$/,
+        name: /^[A-Za-z\s]+(?:\s+[A-Za-z]+)*$/,
         comments: /^[A-Za-z0-9\s.,!?;#$%@&*()-_=:"']*$/
     };
 
@@ -15,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
         errorOutput.innerHTML = `<br>${message}`;
         errorOutput.classList.add('visible');
         input.classList.add('input-error');
+
+        // log error
+        logError(input.id, message);
         
         // remove error after 2 seconds
         setTimeout(() => {
@@ -39,15 +45,34 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function logError(field, message) {
+        const timestamp = new Date().toISOString();
+        form_errors.push({
+            field: field,
+            message: message,
+            timestamp: timestamp
+        });
+        console.log(`Error Logged: ${field} - ${message} at ${timestamp}`);
+    }
+
     function validateField(input) {
+        let message = "";
         if (input.validity.valueMissing) {
-            input.setCustomValidity("This field is required.");
+            message = "This field is required.";
+            input.setCustomValidity(message);
+            logError(input.id, message);
         } else if (input.validity.tooShort) {
-            input.setCustomValidity("Input is too short.");
+            message = "Input is too short.";
+            input.setCustomValidity();
+            logError(input.id, message);
         } else if (input.validity.tooLong) {
-            input.setCustomValidity("Input is too long.");
+            message = "Input is too long.";
+            input.setCustomValidity(message);
+            logError(input.id, message);
         } else if (input.validity.patternMismatch) {
-            input.setCustomValidity("Invalid characters used.");
+            message = "Invalid characters used.";
+            input.setCustomValidity(message);
+            logError(input.id, message);
         } else {
             input.setCustomValidity("");
         }
@@ -91,9 +116,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // final validation on submit
     form.addEventListener('submit', function (event) {
+        form_errors.length = 0;
+
         validateField(nameInput);
         validateField(emailInput);
         validateField(commentsInput);
+
+        if (form_errors.length > 0) {
+            formErrorsInput.value = JSON.stringify(form_errors);
+        } else {
+            formErrorsInput.value = ""; // clears field if no errors
+        }
+
         if (!form.checkValidity()) {
             event.preventDefault();
         }
