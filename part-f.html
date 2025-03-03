@@ -1,0 +1,67 @@
+<form id="contact-form" action="https://httpbin.org/post" method="POST">
+    <fieldset>
+        <legend>contact info:</legend>
+
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" maxlength="64" pattern="[A-Za-z\s]+(?:\s+[A-Za-z]+)*" required autocomplete="name">
+        <output class="info" id="name"></output>
+        <output class="error" id="name-error"></output>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" maxlength="254" required>
+        <output class="info" id="email"></output>
+        <output class="error" id="email-error"></output>
+        <br><br>
+
+        <label for="location">where are you from? (optional)</label>
+        <select name="locations" id="location">
+            <option value="" disabled selected>select a location</option>
+            <optgroup label="Southern CA">
+                <option value="san-diego">San Diego</option>
+                <option value="orange-county">Orange County</option>
+                <option value="los-angeles">Los Angeles</option>
+                <option value="other-socal">Other (SoCal)</option>
+            </optgroup>
+            <optgroup label="Northern CA">
+                <option value="san-francisco">San Francisco</option>
+                <option value="san-jose">San Jose</option>
+                <option value="palo-alto">Palo Alto</option>
+                <option value="mountain-view">Mountain View</option>
+                <option value="other-norcal">Other (NorCal)</option>
+            </optgroup>
+            <optgroup label="Other (U.S.)">
+                <option value="west">West</option>
+                <option value="midwest">MidWest</option>
+                <option value="southwest">SouthWest</option>
+                <option value="southeast">SouthEast</option>
+                <option value="northeast">NorthEast</option>
+            </optgroup>
+        </select>
+        <output class="info" id="location"></output>
+        <output class="error" id="location-error"></output>
+        <br><br>
+
+        <label for="user-type">select which best applies to you: (optional)</label>
+        <select name="user-types" id="user-type">
+            <option value="" disabled selected>who are you?</option>
+            <option value="recruiter">recruiter</option>
+            <option value="student">student</option>
+            <option value="other">other</option>
+        </select>
+        <output class="info" id="user-type"></output>
+        <output class="error" id="user-type-error"></output>
+        <br><br>
+
+        <label for="comments">comments: </label>
+        <textarea id="comments" name="comments" rows="5" cols="50" maxlength="500" placeholder="Enter your comments here..."></textarea>
+        <output class="info" id="comments-count">500 characters remaining</output>
+        <output class="error" id="comments-error"></output>
+        <br><br>
+
+        <input type="hidden" name="possible_bot" value="true">
+        <input type="hidden" id="form-errors" name="form-errors">
+
+        <button type="submit">submit</button>
+    </fieldset>
+</form>
